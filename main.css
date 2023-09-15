@@ -9,7 +9,7 @@ nav {
     text-align: center;
     background: url(images/nav_image.jpeg) no-repeat center; 
     background-size: cover;
-    height: 600px;
+    height: 100vh;
     padding-top: 15px;
     box-shadow: 0px 5px 5px darkgray;
 }
