@@ -1,0 +1,425 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Nav Section */
+
+nav {
+    text-align: center;
+    background: url(images/nav_image.jpeg) no-repeat center; 
+    background-size: cover;
+    height: 600px;
+    padding-top: 15px;
+    box-shadow: 0px 5px 5px darkgray;
+}
+
+#logo, #contact {
+    display: inline-block;
+}
+
+#logo {
+    float: left;
+    margin-left: 100px;
+}
+
+#contact {
+    padding: 20px;
+    margin: 0px 100px 20px 0px;
+    overflow: hidden;
+    float: right;
+}   
+
+#quote {
+    background-color: red;
+}
+  
+a:hover, #number:hover, #quote:hover {
+    background-color: #111;
+    color: white;
+}
+
+#title {
+    font-size: 80px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 70px;
+    width: 50px;
+    color: whitesmoke;
+    margin: 50px 0px 0px 100px;
+}  
+
+h3 {
+    color: white;
+    width: 600px;
+    margin-left: 100px;
+    text-align: left;
+}
+
+h2 {
+    text-align: center;
+}
+
+.getQuote {
+    width: 150px;
+    height: 50px;
+    border: 1px solid white;
+    background-color: red;
+    box-shadow: inset 1px 1px 5px 3px black;
+    border-radius: 3px;
+}
+
+.getQuote:hover {
+    background-color:  maroon;
+}
+
+nav > button {
+    float: left;
+    margin-left: 100px;
+}
+
+/* Info Section */
+
+#info {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 25px;
+}
+
+#info-right {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    margin: .8em;
+    width: 65%;
+    text-align: center;
+}
+
+#info-image {
+    display:flex;
+    height: 200px;
+    margin-top: 125px;
+}
+
+/* Benefits Section */
+
+#benefits, #compare, #area {
+    background-color: rgb(243, 235, 235);
+}
+
+#benefits {
+    padding: 25px;
+}
+
+#benefits-group {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
+
+#benefits-left {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    margin: .8em;
+    width: 35%;
+    box-shadow: 5px 5px 5px darkgray;
+}
+
+#benefits-right {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    margin: .8em;
+    width: 65%;
+}
+
+#benefits-right > p {
+    display: none;
+}
+
+.benefit {
+    border: 1px solid grey;
+    margin: 0px;
+    height: 37px;
+    padding: 15px 0px 0px 25px;
+    background-color: white;
+}
+
+.benefit > span {
+    display: none;
+}
+
+.benefit:hover > span {
+    display: inline;
+}
+
+.benefit:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+/* Portfolio Section */
+
+#portfolio {
+    text-align: center;
+    
+    
+    padding: 25px;
+}
+
+.house > img {
+    width: 19%;
+    height: 150px;
+    margin: 2px;
+}
+
+#houses {
+    box-shadow: 0px 5px 5px darkgray;
+    border-radius: 3px;
+    width: 80%;
+    margin: auto;
+}
+
+/* Compare Section */
+
+#compare {
+    padding: 25px;
+}
+
+table {
+    margin: auto;
+    background-color: white;
+    border-collapse: collapse;
+    width: 80%;
+    border: 15px solid white;
+    box-shadow: 0px 5px 5px darkgray;
+}
+
+.company {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.check {
+    background-color: rgb(243, 235, 235);
+    text-align: center;
+}
+
+.circle {
+    width: 17px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.merry {
+    color: red;
+    border: 1px solid red;
+    box-shadow: 5px 5px 5px darkgray;
+}
+
+/* Steps Section */
+
+#easySteps {
+    padding: 25px;
+}
+
+#steps {
+    width: 80%;
+    margin: auto;
+    border: 15px solid white;
+    box-shadow: 0px 5px 5px darkgray;
+    background-color: rgb(243, 235, 235);
+    display: flex;
+    flex-flow: row;
+}
+
+#step {
+    width: 20%;
+}
+
+.steps {
+    border: 1px solid lightgray;
+    text-align: center;
+    height: 60px;
+    padding-top: 8px;
+}
+
+.steps:hover {
+    background-color: red;
+}
+
+.steps > p{
+    display: inline-block;
+}
+
+.step {
+    transform: rotate(270deg);
+    font-size: 10px;
+}
+
+#process {
+    width: 60%;
+    padding: 0px 0px 10px 20px;
+}
+
+#processSteps {
+    height: 100px;
+}
+
+#processSteps > p {
+    display: none;
+}
+
+#checklist {
+    width: 20%;
+    height: 210px;
+}
+
+/* Area Section */
+
+#area {
+    height: 350px;
+    padding: 25px;
+}
+
+#map {
+    text-align: center;
+    background: url(images/map.jpeg) no-repeat center; 
+    background-size: contain;
+    height: 200px;
+    padding-top: 15px;
+    box-shadow: 0px 5px 5px darkgray;
+    background-color: white;
+}
+
+/* Frequently Asked Questions Section */
+
+#faq {
+    margin: 50px 0px;
+}
+
+.answer {
+    display: none;
+    width: 45%;
+    margin: auto;
+    text-align: justify;
+}
+
+h5 {
+    position: relative;
+    border: 1px solid rgb(243, 235, 235);
+    box-shadow: 5px 5px 5px lightgray;
+    padding: 5px;
+    width: 50%;
+    margin: 15px auto;
+}
+
+h5:hover {
+    cursor: pointer;
+    background-color: rgb(243, 235, 235);
+}
+
+.plus {
+    background-color: indigo;
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+/* Footer Section */
+
+footer {
+    text-align: center;
+    background: url(images/footer_light.jpeg) no-repeat center; 
+    background-size: cover;
+    height: 475px;
+    padding: 50px 50px 20px 50px;
+}
+
+h1 {
+    color: white;
+}
+
+#footerLinks {
+    display: flex;
+    flex-flow: row;
+    padding-top: 30px;
+}
+
+#linkLeft {
+    width: 50%;
+    color: white;
+    text-align: left;
+    padding-top: 25px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#linkLeft > img {
+    margin-left: 70px;
+}
+
+.social {
+    width: 30px;
+    height: 30px;
+    padding-top: 5px;
+}
+
+#linkRight {
+    width: 50%;
+}
+
+#countyMap {
+    width: 200px;
+    height: 160px;
+    padding-bottom: 10px;
+    border-radius: 3px;
+}
+
+/* Get Quote */
+
+#getQuote {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#quoteForm {
+    margin: 50px auto;
+    text-align: center;
+    width: 50%;
+    height: 305px;
+    border: 40px solid rgb(243, 235, 235);
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px lightgray;
+    background-color: white;
+}
+
+form {
+    width: 200px;
+    margin: auto;
+}
+
+input {
+    margin-bottom: 7px;
+}
+
+h4 {
+    line-height: 0px;
+}
+
+#submit {
+    width: 60px;
+    height: 30px;
+    background-color: green;
+    color: white;
+    border: 1px solid white;
+    box-shadow: 5px 5px 5px lightgray;
+    border-radius: 3px;
+}
