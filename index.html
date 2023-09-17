@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merry and Bright</title>
 
-    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="main.css">
 
 </head>
@@ -85,102 +85,26 @@
         <hr style="width: 150px; text-align: center">
         <h2>MAKE <span style="color:red">YOUR HOME</span> THE TALK OF THE NEIGHBORHOOD</h2>
         <div id="houses">
-        <div class="app">
-            <div class="cardList">
-                <button class="cardList__btn btn btn--left">
-                    <div class="icon">
-                        <svg>
-                            <use xlink:href="#arrow-left"></use>
-                        </svg>
-                    </div>
-                </button>
+            <div id="carousel-container">
 
-                <div class="cards__wrapper">
-                    <div class="card current--card">
-                        <div class="card__image">
-                            <img src="./images/houses/house8.jpeg" alt="house lighting image" />
-                        </div>
-                    </div>
+                <!-- Your carousel content goes here -->
+                <div id="carousel">
 
-                    <div class="card next--card">
-                        <div class="card__image">
-                            <img src="./images/houses/house8.jpeg" alt="house lighting image" />
-                        </div>
-                    </div>
+                    <!-- Left arrow for moving backward -->
+                    <div id="prev-arrow" class="carousel-arrow">&lt;</div>
 
-                    <div class="card previous--card">
-                        <div class="card__image">
-                            <img src="./images/houses/house8.jpeg" alt="house lighting image" />
-                        </div>
-                    </div>
-                </div>
+                    <img src="images/houses/house1.jpeg" id="carousel-image-0" class="carousel-image">
+                    <img src="images/houses/house2.jpeg" id="carousel-image-1" class="carousel-image">
+                    <img src="images/houses/house3.jpeg" id="carousel-image-2" class="carousel-image">
+                    <img src="images/houses/house4.jpeg" id="carousel-image-3" class="carousel-image">
+                    <img src="images/houses/house5.jpeg" id="carousel-image-4" class="carousel-image">
+                    <img src="images/houses/house6.jpeg" id="carousel-image-5" class="carousel-image">
 
-                <button class="cardList__btn btn btn--right">
-                    <div class="icon">
-                        <svg>
-                            <use xlink:href="#arrow-right"></use>
-                        </svg>
-                    </div>
-                </button>
-            </div>
-
-            <div class="infoList">
-                <div class="info__wrapper">
-                    <div class="info current--info">
-                        <h1 class="text name">Highlands</h1>
-                        <h4 class="text location">Scotland</h4>
-                        <p class="text description">The mountains are calling</p>
-                    </div>
-
-                    <div class="info next--info">
-                        <h1 class="text name">Machu Pichu</h1>
-                        <h4 class="text location">Peru</h4>
-                        <p class="text description">Adventure is never far away</p>
-                    </div>
-
-                    <div class="info previous--info">
-                        <h1 class="text name">Chamonix</h1>
-                        <h4 class="text location">France</h4>
-                        <p class="text description">Let your dreams come true</p>
-                    </div>
+                    <!-- Right arrow for moving forward -->
+                    <div id="next-arrow" class="carousel-arrow">&gt;</div>
                 </div>
             </div>
-
-            <div class="app__bg">
-                <div class="app__bg__image current--image">
-                    <img src="./images/houses/house8.jpeg" alt="house lighting image" />
-                </div>
-                <div class="app__bg__image next--image">
-                    <img src="./images/houses/house8.jpeg" alt="house lighting image" />
-                </div>
-                <div class="app__bg__image previous--image">
-                    <img src="./images/houses/house8.jpeg" alt="house lighting image" />
-                </div>
-            </div>
-        </div>
-
-        <div class="loading__wrapper">
-            <div class="loader--text">Loading...</div>
-            <div class="loader">
-                <span></span>
-            </div>
-        </div>
-
-        <svg class="icons" style="display: none;">
-            <symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-                <polyline points='328 112 184 256 328 400'
-                    style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
-            </symbol>
-            <symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
-                <polyline points='184 112 328 256 184 400'
-                    style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
-            </symbol>
-        </svg>
-        <div class="support">
-            <a href="https://twitter.com/DevLoop01" target="_blank"><i class="fab fa-twitter-square"></i></a>
-            <a href="https://dribbble.com/devloop01" target="_blank"><i class="fab fa-dribbble"></i></a>
-        </div>
-        <!-- <div class="house"><img src="./images/houses/house1.jpeg" alt="house lighting image"><img src="./images/houses/house2.jpeg" alt="house lighting image"><img src="./images/houses/house3.jpeg" alt="house lighting image"><img src="./images/houses/house4.jpeg" alt="house lighting image"><img src="./images/houses/house5.jpeg" alt="house lighting image"></div>
+            <!-- <div class="house"><img src="./images/houses/house1.jpeg" alt="house lighting image"><img src="./images/houses/house2.jpeg" alt="house lighting image"><img src="./images/houses/house3.jpeg" alt="house lighting image"><img src="./images/houses/house4.jpeg" alt="house lighting image"><img src="./images/houses/house5.jpeg" alt="house lighting image"></div>
             <div class="house"><img src="./images/houses/house6.jpeg" alt="house lighting image"><img src="./images/houses/house7.jpeg" alt="house lighting image"><img src="./images/houses/house8.jpeg" alt="house lighting image"><img src="./images/houses/house9.jpeg" alt="house lighting image"><img src="./images/houses/house10.jpeg" alt="house lighting image"></div>
             <div class="house"><img src="./images/houses/house11.jpeg" alt="house lighting image"><img src="./images/houses/house12.jpeg" alt="house lighting image"><img src="./images/houses/house13.jpeg" alt="house lighting image"><img src="./images/houses/house14.jpeg" alt="house lighting image"><img src="./images/houses/house15.jpeg" alt="house lighting image"></div>
             <div class="house"><img src="./images/houses/house16.jpeg" alt="house lighting image"><img src="./images/houses/house17.jpeg" alt="house lighting image"><img src="./images/houses/house18.jpeg" alt="house lighting image"><img src="./images/houses/house19.jpeg" alt="house lighting image"><img src="./images/houses/house20.jpeg" alt="house lighting image"></div> -->
@@ -389,10 +313,10 @@
     <!-- MAIN JAVASCRIPT -->
     <script src="main.js"></script>
 
-    <!-- SLIDER -->
+    <!-- CAROUSEL -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="js/slider.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 
 </html>

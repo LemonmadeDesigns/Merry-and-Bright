@@ -59,6 +59,7 @@ button:focus {
   width: 100%;
   height: 100%;
   background: #000;
+  /* background: white; */
   z-index: 1;
   opacity: 0.8;
 }
@@ -145,7 +146,7 @@ button:focus {
   top: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  /* background: #000; */
   z-index: 1;
   transition: opacity var(--card-transition-duration) var(--card-transition-easing);
   opacity: calc(1 - var(--opacity));
