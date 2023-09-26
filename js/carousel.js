@@ -1,7 +1,7 @@
 // Class that manage the carousel
 class Carousel {
 
-    // Constructor, initialise the carousel
+    // Constructor, initialize the carousel
     constructor() {
 
         // Get image elements
@@ -157,7 +157,7 @@ container.addEventListener('contextmenu', (event) => {
     event.preventDefault();
 });
 
-// EVENTLEISTENERS FOR ARROWS FOR FORWARD & BACKWARDS
+// EVENT LISTENERS FOR ARROWS FOR FORWARD & BACKWARDS
 // Left arrow click
 document.getElementById('prev-arrow').addEventListener('click', () => {
     carousel.previous();

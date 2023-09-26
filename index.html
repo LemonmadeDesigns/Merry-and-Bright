@@ -6,25 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merry and Bright</title>
-
+    <!-- Logo fixed and added in the images -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/logo.JPG">
+    <!-- BootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="main.css">
+
 
 </head>
 
 <body>
-    <nav>
-        <div id="logo">
+    <nav class="navbar navbar-expand-lg navbar-dark" id="myNav">
+        <div class="container-fluid" id="home">
+            <a class="navbar-brand" href="#home">
             <img src="./images/logo.JPG" alt="company logo">
+             Holiday Lighting Service
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav" >
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#info">Information</a>
+                    <a class="nav-link" href="#benefits">Benefits</a>
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                    <a class="nav-link" href="#compare">Compare</a>
+                    <a class="nav-link" href="#area">Area</a>
+                    <a class="nav-link" href="#faq">FAQ</a>
+                </div>
+                <button class="btn getQuote" type="button" data-bs-target="#quoteModal">GET A FAST QUOTE</button>
+            </div>
         </div>
-        <div id="contact">
-            <button class="getQuote">GET A FAST QUOTE</button>
-        </div>
-        <div id="title">HOLIDAY LIGHTING SERVICES</div>
-        <h3>Get The Best Lit Home I Your Neighborhood With Our All Inclusive Holiday Lighting Services</h3>
-        <button class="getQuote">GET A FAST QUOTE</button>
     </nav>
-    <div id="info">
+    
+    <header class="header-image" class="nextSection">
+        <h2 class="subtitle">Get The Best Lit Home In Your Neighborhood With Our All Inclusive Holiday Lighting Services</h2>
+    </header>
+    <div id="info" class="nextSection">
         <img src="./images/info_logo.jpeg" id="info-image" alt="lights">
         <div id="info-right">
             <h4>#1 HOLIDAY LIGHT INSTALLATION IN SOUTHEAST MICHIGAN</h4>
@@ -41,10 +61,10 @@
                 first time. You'll never want to do it alone again? With the greatest
                 Holiday light installation in SOUTHEAST Michigan, brighten up your home
                 and neighborhood!</p>
-            <button class="getQuote">GET A FAST QUOTE</button>
+            
         </div>
     </div>
-    <div id="benefits">
+    <div id="benefits" class="nextSection">
         <h2>BENEFITS OF OUR <span style="color:red">ALL INCLUSIVE</span> HOLIDAY LIGHT INSTALLATION SERVICES</h2>
         <div id="benefits-group">
             <div id="benefits-left">
@@ -80,7 +100,7 @@
             </div>
         </div>
     </div>
-    <div id="portfolio">
+    <div id="portfolio" class="nextSection">
         <p>#1 PROFESSIONAL HOLIDAY LIGHT INSTALLATION IN SOUTHEST MICHIGAN</p>
         <hr style="width: 150px; text-align: center">
         <h2>MAKE <span style="color:red">YOUR HOME</span> THE TALK OF THE NEIGHBORHOOD</h2>
@@ -110,7 +130,7 @@
             <div class="house"><img src="./images/houses/house16.jpeg" alt="house lighting image"><img src="./images/houses/house17.jpeg" alt="house lighting image"><img src="./images/houses/house18.jpeg" alt="house lighting image"><img src="./images/houses/house19.jpeg" alt="house lighting image"><img src="./images/houses/house20.jpeg" alt="house lighting image"></div> -->
         </div>
     </div>
-    <div id="compare">
+    <div id="compare" class="nextSection">
         <h2>HOW <span style="color:red">MERRY AND BRIGHT</span> COMPARES TO OTHER HOLIDAY LIGHTING COMPANIES</h2>
         <TABLE>
             <TR>
@@ -195,7 +215,7 @@
             </TR>
         </TABLE>
     </div>
-    <div id="easySteps">
+    <div id="easySteps" class="nextSection">
         <h2>GET THE BEST CHRISTMAS LIGHT INSTALLATION IN JUST 3 EASY STEPS</h2>
         <div id="steps">
             <div id="step">
@@ -225,17 +245,17 @@
                         form.
                         We'll provide you with a price as soon as possible, so you won't have to wait around!</p>
                 </div>
-                <button class="getQuote">GET A FAST QUOTE</button>
+                
             </div>
             <img id="checklist" src="./images/checklist.png" alt="company logo">
         </div>
     </div>
-    <div id="area">
+    <div id="area" class="nextSection">
         <h2>WE PROVIDE THE <span style="color:red">HIGHEST QUALITY</span> HOLIDAY LIGHTING IN THE SOUTHEST MICHIGAN AREA
         </h2>
         <div id="map"></div>
     </div>
-    <div id="faq">
+    <div id="faq" class="nextSection">
         <h2>FREQUENTLY ASKED QUESTIONS</h2>
         <div class="questions">
             <h5><span class="plus">+</span>After The Holidays, Do You Remove The Lights?</h5>
@@ -269,7 +289,7 @@
     <footer>
         <div>
             <h1>READY TO MAKE YOUR HOME THE TALK OF THE NEIGHBORHOOD?</h1>
-            <button class="getQuote">GET A FAST QUOTE</button>
+           
         </div>
         <div id="footerLinks">
             <div id="linkLeft">
@@ -290,33 +310,48 @@
                 <div>
                     <img id="countyMap" src="./images/county_map.png" alt="county map">
                 </div>
-                <button class="getQuote">GET A FAST QUOTE</button>
+                
             </div>
         </div>
     </footer>
-    <div id="getQuote">
-        <div id="quoteForm">
-            <img src="./images/logo.JPG" alt="company logo">
-            <h4>Two Easy Ways To Schedule A Quote:</h4>
-            <h4>Call: (810) 836-8329</h4>
-            <h4>or</h4>
-            <form action="">
+    <a href="#scroll-end" class="btn scroll-arrow" id="scroll-button">
+        <h4 id="tooltip"></h4>
+    </a>
+    <div id="scroll-end"></div>
+    <!-- Modal -->
+    <div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Get A Quote From Us</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+            <div class="modal-body">
+                <p class="error-message">* Please fill out all the required fields correctly.</p>
+              <form action="" id="quoteForm">
+                <label for="name">Name:</label>
                 <input type="text" placeholder="Name" required name="Name" autocomplete="off">
+                <label for="email">Email:</label>
                 <input type="email" placeholder="Email" required name="Email" autocomplete="off">
-                <input type="tel" placeholder="Phone ###-###-####" required name="Phone"
-                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off">
-                <button type="submit" id="submit">Submit</button>
-            </form>
+                <label for="tel">Telephone:</label>
+                <input type="tel" placeholder="Phone ###-###-####" required name="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" autocomplete="off">
+                <button type="submit" id="submit" class="btn">Submit</button>
+                <button type="button" id="cancel" class="btn mt-3" data-bs-dismiss="modal">Cancel</button>
+              </form>
+            </div>
+          </div>
         </div>
     </div>
-
+    
     <!-- MAIN JAVASCRIPT -->
     <script src="main.js"></script>
+    <!-- BootStrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- CAROUSEL -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="js/carousel.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+   <script src="js/carousel.js"></script>
 </body>
 
 </html>

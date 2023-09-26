@@ -1,233 +1,270 @@
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-/* Nav Section */
-
-nav {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  /* Nav Section */
+  
+  .header-image {
     text-align: center;
-    background: url(images/nav_image.jpeg) no-repeat center; 
+    background: url(images/nav_image.jpeg) no-repeat center;
     background-size: cover;
     height: 100vh;
-    padding-top: 15px;
-    box-shadow: 0px 5px 5px darkgray;
-}
-
-#logo, #contact {
-    display: inline-block;
-}
-
-#logo {
-    float: left;
-    margin-left: 100px;
-}
-
-#contact {
-    padding: 20px;
-    margin: 0px 100px 20px 0px;
-    overflow: hidden;
-    float: right;
-}   
-
-#quote {
-    background-color: red;
-}
+    position: relative; /* Make the header relative to allow absolute positioning */
+    z-index: 0; /* Adjust z-index to place the image behind the content */
+  }
   
-a:hover, #number:hover, #quote:hover {
-    background-color: #111;
+  .subtitle {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute; /* Position the subtitle absolutely */
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Place the subtitle above the image */
+  }
+  
+  #myNav.offset {
+    background-color: #9b3432; /* Add background color when offset */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow when offset */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    animation: fadeIn 0.5s;
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    animation: fadeIn 0.5s;
+  }
+  /* CSS for the fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  #myNav {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    list-style: none;
+    margin: 0; /* Remove default margin */
+    background-color: rgba(30, 17, 11, 255);
+  }
+  
+  /* Style the navigation links */
+  #myNav a {
+    flex-grow: 1; /* Distribute space equally */
+    text-align: center; /* Center-align the text */
+  }
+  
+  /* Style the "GET A FAST QUOTE" button */
+  .getQuote {
+    background-color: #9b3432;
     color: white;
-}
-
-#title {
-    font-size: 80px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 70px;
-    width: 50px;
-    color: whitesmoke;
-    margin: 50px 0px 0px 100px;
-}  
-
-h3 {
-    color: white;
-    width: 600px;
-    margin-left: 100px;
-    text-align: left;
-}
-
-h2 {
-    text-align: center;
-}
-
-.getQuote {
-    width: 150px;
-    height: 50px;
-    border: 1px solid white;
-    background-color: red;
-    box-shadow: inset 1px 1px 5px 3px black;
-    border-radius: 3px;
-}
-
-.getQuote:hover {
-    background-color:  maroon;
-}
-
-nav > button {
-    float: left;
-    margin-left: 100px;
-}
-
-/* Info Section */
-
-#info {
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin-left: 15px;
+  }
+  /* Scroll on the side */
+  .scroll-arrow {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-size: 16px; /* Reduced font size */
+      color: #fff;
+      background-color: #9b3432;
+      border-radius: 10%;
+      padding: 8px; /* Reduced padding */
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+      z-index: 999;
+      display: block;
+      cursor: pointer; /* Add cursor style to indicate interactivity */
+    }
+    
+    .scroll-arrow:hover {
+      background-color: #30574d;
+      transform: scale(1.1);
+      color: #fff;
+    }
+    
+  
+  /* Responsive styling for small screens */
+  @media screen and (max-width: 768px) {
+    .scroll-arrow {
+      font-size: 20px;
+      padding: 8px;
+      bottom: 15px;
+      left: 15px;
+    }
+  }
+  
+  /* Info Section */
+  
+  #info {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     padding: 25px;
-}
-
-#info-right {
+  }
+  
+  #info-right {
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
-    margin: .8em;
+    margin: 0.8em;
     width: 65%;
     text-align: center;
-}
-
-#info-image {
-    display:flex;
+  }
+  
+  #info-image {
+    display: flex;
     height: 200px;
     margin-top: 125px;
-}
-
-/* Benefits Section */
-
-#benefits, #compare, #area {
+  }
+  
+  /* Benefits Section */
+  
+  #benefits,
+  #compare,
+  #area {
     background-color: rgb(243, 235, 235);
-}
-
-#benefits {
+  }
+  
+  #benefits {
     padding: 25px;
-}
-
-#benefits-group {
+  }
+  
+  #benefits-group {
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
-}
-
-#benefits-left {
+  }
+  
+  #benefits-left {
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
-    margin: .8em;
+    margin: 0.8em;
     width: 35%;
     box-shadow: 5px 5px 5px darkgray;
-}
-
-#benefits-right {
+  }
+  
+  #benefits-right {
     display: flex;
     flex-flow: row;
     justify-content: space-evenly;
-    margin: .8em;
+    margin: 0.8em;
     width: 65%;
-}
-
-#benefits-right > p {
+  }
+  
+  #benefits-right > p {
     display: none;
-}
-
-.benefit {
+  }
+  
+  .benefit {
     border: 1px solid grey;
     margin: 0px;
     height: 37px;
     padding: 15px 0px 0px 25px;
     background-color: white;
-}
-
-.benefit > span {
+  }
+  
+  .benefit > span {
     display: none;
-}
-
-.benefit:hover > span {
+  }
+  
+  .benefit:hover > span {
     display: inline;
-}
-
-.benefit:hover {
+  }
+  
+  .benefit:hover {
     background-color: red;
     cursor: pointer;
-}
-
-/* Portfolio Section */
-
-#portfolio {
+  }
+  
+  /* Portfolio Section */
+  
+  #portfolio {
     text-align: center;
-    
-    
+  
     padding: 25px;
-}
-
-.house > img {
+  }
+  
+  .house > img {
     width: 19%;
     height: 150px;
     margin: 2px;
-}
-
-#houses {
+  }
+  
+  #houses {
     box-shadow: 0px 5px 5px darkgray;
     border-radius: 3px;
     width: 80%;
     margin: auto;
-}
-
-/* Compare Section */
-
-#compare {
+  }
+  
+  /* Compare Section */
+  
+  #compare {
     padding: 25px;
-}
-
-table {
+  }
+  
+  table {
     margin: auto;
     background-color: white;
     border-collapse: collapse;
     width: 80%;
     border: 15px solid white;
     box-shadow: 0px 5px 5px darkgray;
-}
-
-.company {
+  }
+  
+  .company {
     background-color: red;
     color: white;
     border: none;
     padding: 10px;
-}
-
-.check {
+  }
+  
+  .check {
     background-color: rgb(243, 235, 235);
     text-align: center;
-}
-
-.circle {
+  }
+  
+  .circle {
     width: 17px;
     border: 1px solid black;
     border-radius: 50%;
     margin: auto;
-}
-
-.merry {
+  }
+  
+  .merry {
     color: red;
     border: 1px solid red;
     box-shadow: 5px 5px 5px darkgray;
-}
-
-/* Steps Section */
-
-#easySteps {
+  }
+  
+  /* Steps Section */
+  
+  #easySteps {
     padding: 25px;
-}
-
-#steps {
+  }
+  
+  #steps {
     width: 80%;
     margin: auto;
     border: 15px solid white;
@@ -235,191 +272,213 @@ table {
     background-color: rgb(243, 235, 235);
     display: flex;
     flex-flow: row;
-}
-
-#step {
+  }
+  
+  #step {
     width: 20%;
-}
-
-.steps {
+  }
+  
+  .steps {
     border: 1px solid lightgray;
     text-align: center;
     height: 60px;
     padding-top: 8px;
-}
-
-.steps:hover {
+  }
+  
+  .steps:hover {
     background-color: red;
-}
-
-.steps > p{
+  }
+  
+  .steps > p {
     display: inline-block;
-}
-
-.step {
+  }
+  
+  .step {
     transform: rotate(270deg);
     font-size: 10px;
-}
-
-#process {
+  }
+  
+  #process {
     width: 60%;
     padding: 0px 0px 10px 20px;
-}
-
-#processSteps {
+  }
+  
+  #processSteps {
     height: 100px;
-}
-
-#processSteps > p {
+  }
+  
+  #processSteps > p {
     display: none;
-}
-
-#checklist {
+  }
+  
+  #checklist {
     width: 20%;
     height: 210px;
-}
-
-/* Area Section */
-
-#area {
+  }
+  
+  /* Area Section */
+  
+  #area {
     height: 350px;
     padding: 25px;
-}
-
-#map {
+  }
+  
+  #map {
     text-align: center;
-    background: url(images/map.jpeg) no-repeat center; 
+    background: url(images/map.jpeg) no-repeat center;
     background-size: contain;
     height: 200px;
     padding-top: 15px;
     box-shadow: 0px 5px 5px darkgray;
     background-color: white;
-}
-
-/* Frequently Asked Questions Section */
-
-#faq {
+  }
+  
+  /* Frequently Asked Questions Section */
+  
+  #faq {
     margin: 50px 0px;
-}
-
-.answer {
+  }
+  
+  .answer {
     display: none;
     width: 45%;
     margin: auto;
     text-align: justify;
-}
-
-h5 {
+  }
+  
+  h5 {
     position: relative;
     border: 1px solid rgb(243, 235, 235);
     box-shadow: 5px 5px 5px lightgray;
     padding: 5px;
     width: 50%;
     margin: 15px auto;
-}
-
-h5:hover {
+  }
+  
+  h5:hover {
     cursor: pointer;
     background-color: rgb(243, 235, 235);
-}
-
-.plus {
+  }
+  
+  .plus {
     background-color: indigo;
     padding: 5px 10px;
     margin-right: 10px;
-}
-
-/* Footer Section */
-
-footer {
+  }
+  
+  /* Footer Section */
+  
+  footer {
     text-align: center;
-    background: url(images/footer_light.jpeg) no-repeat center; 
+    background: url(images/footer_light.jpeg) no-repeat center;
     background-size: cover;
     height: 475px;
     padding: 50px 50px 20px 50px;
-}
-
-h1 {
+  }
+  
+  h1 {
     color: white;
-}
-
-#footerLinks {
+  }
+  
+  #footerLinks {
     display: flex;
     flex-flow: row;
     padding-top: 30px;
-}
-
-#linkLeft {
+  }
+  
+  #linkLeft {
     width: 50%;
     color: white;
     text-align: left;
     padding-top: 25px;
-}
-
-ul {
+  }
+  
+  ul {
     list-style-type: none;
-}
-
-#linkLeft > img {
+  }
+  
+  #linkLeft > img {
     margin-left: 70px;
-}
-
-.social {
+  }
+  
+  .social {
     width: 30px;
     height: 30px;
     padding-top: 5px;
-}
-
-#linkRight {
+  }
+  
+  #linkRight {
     width: 50%;
-}
-
-#countyMap {
+  }
+  
+  #countyMap {
     width: 200px;
     height: 160px;
     padding-bottom: 10px;
     border-radius: 3px;
-}
-
-/* Get Quote */
-
-#getQuote {
+  }
+  
+  /* Get Quote */
+  
+  /* Get Quote */
+  #getQuote {
     display: none;
     position: fixed;
     top: 0;
     width: 100%;
-}
-
-#quoteForm {
+  }
+  
+  #quoteForm {
     margin: 50px auto;
     text-align: center;
-    width: 50%;
-    height: 305px;
-    border: 40px solid rgb(243, 235, 235);
-    border-radius: 3px;
+    width: 100%; /* Adjust the width to make the modal wider */
+    padding: 20px;
+    border: 2px solid rgb(243, 235, 235);
+    border-radius: 5px;
     box-shadow: 5px 5px 5px lightgray;
     background-color: white;
-}
-
-form {
-    width: 200px;
-    margin: auto;
-}
-
-input {
-    margin-bottom: 7px;
-}
-
-h4 {
-    line-height: 0px;
-}
-
-#submit {
-    width: 60px;
-    height: 30px;
-    background-color: green;
-    color: white;
-    border: 1px solid white;
-    box-shadow: 5px 5px 5px lightgray;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
     border-radius: 3px;
-}
+    font-size: 16px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .modal-header {
+    margin: 0; /* Remove line-height for better readability */
+    background: none; /* Remove the background box */
+  }
+  
+  #submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #30574d;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  #cancel {
+    width: 100%;
+    padding: 10px;
+    background-color: #9b3432;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .error-message {
+    color: #9b3432;
+    margin-top: 10px;
+  }
+  
