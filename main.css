@@ -1,25 +1,25 @@
+/* Global Styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  overflow: hidden;
+  overflow: scroll !important;
 }
 
 /* Nav Section */
-
 .header-image {
   text-align: center;
   background: url(images/nav_image.jpeg) no-repeat center;
   background-size: cover;
   height: 100vh;
-  position: relative; /* Make the header relative to allow absolute positioning */
-  z-index: 0; /* Adjust z-index to place the image behind the content */
+  position: relative;
+  z-index: 0;
 }
 
 .subtitle {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-  position: absolute; /* Position the subtitle absolutely */
+  position: absolute;
   top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -27,50 +27,34 @@ body {
   padding: 10px 20px;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1; /* Place the subtitle above the image */
+  z-index: 1;
 }
 
-#myNav.offset {
-  background-color: #9b3432; /* Add background color when offset */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow when offset */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+#myNav.offset, .sticky {
+  background-color: #9b3432;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   position: fixed;
   top: 0;
   width: 100%;
   animation: fadeIn 0.5s;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  animation: fadeIn 0.5s;
-}
-/* CSS for the fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+/* Navigation Styles */
 #myNav {
   display: flex;
   justify-content: space-around;
   padding: 0;
   list-style: none;
-  margin: 0; /* Remove default margin */
+  margin: 0;
   background-color: rgba(30, 17, 11, 255);
 }
 
-/* Style the navigation links */
 #myNav a {
-  flex-grow: 1; /* Distribute space equally */
-  text-align: center; /* Center-align the text */
+  flex-grow: 1;
+  text-align: center;
 }
 
-/* Style the "GET A FAST QUOTE" button */
 .getQuote {
   background-color: #9b3432;
   color: white;
@@ -80,21 +64,22 @@ body {
   padding: 10px 20px;
   margin-left: 15px;
 }
-/* Scroll on the side */
+
+/* Scroll Arrow */
 .scroll-arrow {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  font-size: 16px; /* Reduced font size */
+  font-size: 16px;
   color: #fff;
   background-color: #9b3432;
   border-radius: 10%;
-  padding: 8px; /* Reduced padding */
+  padding: 8px;
   text-decoration: none;
   transition: background-color 0.3s, transform 0.3s;
   z-index: 999;
   display: block;
-  cursor: pointer; /* Add cursor style to indicate interactivity */
+  cursor: pointer;
 }
 
 .scroll-arrow:hover {
@@ -103,7 +88,7 @@ body {
   color: #fff;
 }
 
-/* Responsive styling for small screens */
+/* Responsive Styling for Small Screens */
 @media screen and (max-width: 768px) {
   .scroll-arrow {
     font-size: 20px;
@@ -113,12 +98,13 @@ body {
   }
 }
 
+/* Info Section */
 #info-right:hover {
   color: #9b3432;
   cursor: pointer;
 }
 
-#info {
+#info, #info-right {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
@@ -128,9 +114,7 @@ body {
 }
 
 #info-right {
-  display: flex;
   flex-flow: column;
-  justify-content: space-evenly;
   margin: 0.8em;
   width: 65%;
   text-align: center;
@@ -147,16 +131,12 @@ body {
   margin-right: 20px;
 }
 
-/* Hide the image when hovering over #info-right */
 #info-right:hover #info-image {
   display: none;
 }
 
 /* Benefits Section */
-
-#benefits,
-#compare,
-#area {
+#benefits, #compare, #area {
   background-color: rgb(243, 235, 235);
 }
 
@@ -170,25 +150,11 @@ body {
   justify-content: space-evenly;
 }
 
-#benefits-left {
+#benefits-left, #benefits-right {
   display: flex;
   flex-flow: column;
   justify-content: space-evenly;
   margin: 0.8em;
-  width: 35%;
-  box-shadow: 5px 5px 5px darkgray;
-}
-
-#benefits-right {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-evenly;
-  margin: 0.8em;
-  width: 65%;
-}
-
-#benefits-right > p {
-  display: none;
 }
 
 .benefit {
@@ -213,10 +179,8 @@ body {
 }
 
 /* Portfolio Section */
-
 #portfolio {
   text-align: center;
-
   padding: 25px;
 }
 
@@ -234,7 +198,6 @@ body {
 }
 
 /* Compare Section */
-
 #compare {
   padding: 25px;
 }
@@ -274,7 +237,6 @@ table {
 }
 
 /* Steps Section */
-
 #easySteps {
   padding: 25px;
 }
@@ -332,7 +294,6 @@ table {
 }
 
 /* Area Section */
-
 #area {
   height: 350px;
   padding: 25px;
@@ -349,7 +310,6 @@ table {
 }
 
 /* Frequently Asked Questions Section */
-
 #faq {
   margin: 50px 0px;
 }
@@ -382,7 +342,6 @@ h5:hover {
 }
 
 /* Footer Section */
-
 footer {
   text-align: center;
   background: url(images/footer_light.jpeg) no-repeat center;
@@ -433,9 +392,7 @@ ul {
   border-radius: 3px;
 }
 
-/* Get Quote */
-
-/* Get Quote */
+/* Get Quote Section */
 #getQuote {
   display: none;
   position: fixed;
@@ -446,7 +403,7 @@ ul {
 #quoteForm {
   margin: 50px auto;
   text-align: center;
-  width: 100%; /* Adjust the width to make the modal wider */
+  width: 100%;
   padding: 20px;
   border: 2px solid rgb(243, 235, 235);
   border-radius: 5px;
@@ -469,27 +426,27 @@ label {
 }
 
 .modal-header {
-  margin: 0; /* Remove line-height for better readability */
-  background: none; /* Remove the background box */
+  margin: 0;
+  background: none;
+}
+
+#submit, #cancel {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 #submit {
-  width: 100%;
-  padding: 10px;
   background-color: #30574d;
   color: white;
   border: none;
-  border-radius: 3px;
-  cursor: pointer;
 }
+
 #cancel {
-  width: 100%;
-  padding: 10px;
   background-color: #9b3432;
   color: white;
   border: none;
-  border-radius: 3px;
-  cursor: pointer;
 }
 
 .error-message {
