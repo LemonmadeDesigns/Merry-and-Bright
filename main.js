@@ -13,6 +13,34 @@ window.addEventListener("scroll", function () {
     }
   });
 
+    // Function to change the active class based on scroll position
+    function setActiveNav() {
+        const sections = document.querySelectorAll("section"); // Get all sections in your page
+        const navLinks = document.querySelectorAll(".navbar-nav a"); // Get all the navigation links
+
+        // Loop through each section
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            
+            // Check if the section is in the viewport
+            if (rect.top <= 100 && rect.bottom >= 100) {
+                // Add the "active" class to the corresponding navigation link
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                });
+                navLinks[index].classList.add("active");
+            }
+        });
+    }
+
+    // Add a scroll event listener to call the setActiveNav function when scrolling
+    window.addEventListener("scroll", setActiveNav);
+
+    // Call setActiveNav initially to set the active class on page load
+    setActiveNav();
+
+
+
   
   // Benefits Section
   const benefit = document.getElementsByClassName("benefit");
