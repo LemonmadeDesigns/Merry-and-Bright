@@ -85,8 +85,6 @@ window.addEventListener("scroll", function () {
   
   // Get Quote
   
-  // Get Quote
-  
   const getQuoteButton = document.querySelector(".getQuote");
   
   getQuoteButton.addEventListener("click", () => {
