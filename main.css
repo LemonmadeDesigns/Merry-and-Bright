@@ -39,6 +39,9 @@ body {
   top: 0;
   width: 100%;
   animation: fadeIn 0.5s;
+  left: 0;
+  width: 100%; /* Set your preferred background color */
+  z-index: 999;
 }
 
 /* Navigation Styles */
@@ -100,12 +103,12 @@ body {
 }
 
 /* Info Section */
-#info-right:hover {
+#infoDisplay:hover {
   color: #9b3432;
   cursor: pointer;
 }
 
-#info, #info-right {
+#info, #infoDisplay {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
@@ -114,27 +117,18 @@ body {
   color: #30574d;
 }
 
-#info-right {
+#infoDisplay {
   flex-flow: column;
   margin: 0.8em;
   width: 65%;
   text-align: center;
 }
 
-#info-right hr {
+#infoDisplay hr {
   background-color: #30574d;
 }
 
-#info-image {
-  display: flex;
-  height: 200px;
-  align-self: flex-start;
-  margin-right: 20px;
-}
 
-#info-right:hover #info-image {
-  display: none;
-}
 
 /* Benefits Section */
 #benefits, #compare, #area {

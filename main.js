@@ -3,7 +3,6 @@ window.addEventListener("scroll", function () {
     let header = document.querySelector(".header-image");
     let nav = document.querySelector("#myNav");
     let subtitle = document.querySelector(".subtitle");
-  
     if (window.pageYOffset >= header.clientHeight / 2) {
       nav.classList.add("offset");
       subtitle.style.opacity = 1;
