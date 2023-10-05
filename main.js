@@ -13,24 +13,32 @@ window.addEventListener("scroll", function () {
   });
 
     // Function to change the active class based on scroll position
-    function setActiveNav() {
-        const sections = document.querySelectorAll("section"); // Get all sections in your page
-        const navLinks = document.querySelectorAll(".navbar-nav a"); // Get all the navigation links
+   // Function to change the active class based on scroll position
+function setActiveNav() {
+  const sections = document.querySelectorAll("section"); // Get all sections in your page
+  const navLinks = document.querySelectorAll(".navbar-nav a"); // Get all the navigation links
 
-        // Loop through each section
-        sections.forEach((section, index) => {
-            const rect = section.getBoundingClientRect();
-            
-            // Check if the section is in the viewport
-            if (rect.top <= 100 && rect.bottom >= 100) {
-                // Add the "active" class to the corresponding navigation link
-                navLinks.forEach((link) => {
-                    link.classList.remove("active");
-                });
-                navLinks[index].classList.add("active");
-            }
-        });
-    }
+  // Loop through each section
+  sections.forEach((section, index) => {
+      const rect = section.getBoundingClientRect();
+
+      // Check if the section is in the viewport
+      if (rect.top <= 0 && rect.bottom >= 0) {
+          // Add the "active" class to the corresponding navigation link
+          navLinks.forEach((link) => {
+              link.classList.remove("active");
+          });
+          navLinks[index].classList.add("active");
+      }
+  });
+}
+
+// Add a scroll event listener to call the setActiveNav function when scrolling
+window.addEventListener("scroll", setActiveNav);
+
+// Call setActiveNav initially to set the active class on page load
+setActiveNav();
+
 
     // Add a scroll event listener to call the setActiveNav function when scrolling
     window.addEventListener("scroll", setActiveNav);
@@ -39,32 +47,25 @@ window.addEventListener("scroll", function () {
     setActiveNav();
 
 
+// Benefits Section
+const benefitsButtons = document.querySelectorAll(".benefit");
+const benefitDescriptions = document.querySelectorAll(".benefit-description");
+
+benefitsButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    // Hide all descriptions
+    benefitDescriptions.forEach((description) => {
+      description.style.display = "none";
+    });
+
+    const targetId = e.target.getAttribute("data-target");
+    const targetDescription = document.getElementById(targetId);
+    targetDescription.style.display = "block";
+  });
+});
 
   
-  // Benefits Section
-  const benefit = document.getElementsByClassName("benefit");
-  const inclusive = document.getElementById("inclusive");
-  const grade = document.getElementById("grade");
-  const safety = document.getElementById("safety");
-  
-  for (var i = 0; i < benefit.length; i++) {
-    benefit[i].addEventListener("mouseover", (e) => {
-      if (e.target.textContent == "> All-inclusive Service") {
-        inclusive.style.display = "block";
-      }
-      if (e.target.textContent == "> High-Grade Lighting") {
-        grade.style.display = "block";
-      }
-      if (e.target.textContent == "> Safety is Priority") {
-        safety.style.display = "block";
-      }
-    });
-    benefit[i].addEventListener("mouseleave", (e) => {
-      inclusive.style.display = "none";
-      grade.style.display = "none";
-      safety.style.display = "none";
-    });
-  }
+
   
   // Steps Section
   

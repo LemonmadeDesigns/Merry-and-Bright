@@ -4,6 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overflow: scroll !important;
+  padding-right: 0 !important; /* Override the default padding */
 }
 
 /* Nav Section */
@@ -31,7 +32,8 @@ body {
   color: #30574d;
 }
 
-#myNav.offset, .sticky {
+#myNav.offset,
+.sticky {
   background-color: #9b3432;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -44,14 +46,12 @@ body {
   z-index: 999;
 }
 
-/* Navigation Styles */
 #myNav {
-  display: flex;
-  justify-content: space-around;
-  padding: 0;
+  background-color: #1e110b; /* Solid color */
   list-style: none;
-  margin: 0;
-  background-color: rgba(30, 17, 11, 255);
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
 }
 
 #myNav a {
@@ -78,7 +78,6 @@ body {
   color: #fff;
   background-color: #9b3432;
   border-radius: 10%;
-  padding: 8px;
   text-decoration: none;
   transition: background-color 0.3s, transform 0.3s;
   z-index: 999;
@@ -97,8 +96,6 @@ body {
   .scroll-arrow {
     font-size: 20px;
     padding: 8px;
-    bottom: 15px;
-    left: 15px;
   }
 }
 
@@ -108,75 +105,83 @@ body {
   cursor: pointer;
 }
 
-#info, #infoDisplay {
+#info,
+#infoDisplay {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
   padding: 25px;
   background-color: #fff;
   color: #30574d;
+  margin-top: 75px;
 }
 
 #infoDisplay {
   flex-flow: column;
-  margin: 0.8em;
+  margin-top: 100px;
   width: 65%;
   text-align: center;
 }
-
-#infoDisplay hr {
-  background-color: #30574d;
-}
-
-
-
 /* Benefits Section */
-#benefits, #compare, #area {
-  background-color: rgb(243, 235, 235);
-}
-
 #benefits {
+  background-color: #9b3432;
   padding: 25px;
+  color: #fff;
+  text-align: center; /* Center the content */
 }
 
-#benefits-group {
+.benefits-container {
   display: flex;
-  flex-flow: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center; /* Center the items horizontally */
+  justify-content: center; /* Center the items vertically */
 }
 
-#benefits-left, #benefits-right {
+.benefits-buttons {
   display: flex;
-  flex-flow: column;
+  flex-direction: row; /* Display buttons horizontally */
   justify-content: space-evenly;
   margin: 0.8em;
 }
 
 .benefit {
-  border: 1px solid grey;
-  margin: 0px;
-  height: 37px;
-  padding: 15px 0px 0px 25px;
-  background-color: white;
-}
-
-.benefit > span {
-  display: none;
-}
-
-.benefit:hover > span {
-  display: inline;
+  border: none;
+  margin: 0.8em; /* Add spacing between buttons */
+  padding: 15px;
+  background-color: #30574d;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex: 1; /* Distribute available space evenly among buttons */
 }
 
 .benefit:hover {
-  background-color: red;
-  cursor: pointer;
+  background-color: #9b3432;
+}
+
+.benefit-description {
+  display: none;
+  text-align: left; /* Align descriptions to the left */
+  padding: 20px; /* Add spacing around descriptions */
+}
+
+.highlight {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em; /* Increase font size */
+  text-shadow: 3px 3px 4px #30574d; /* Add text outline */
+}
+
+/* Center h2 */
+h2 {
+  text-align: center;
 }
 
 /* Portfolio Section */
 #portfolio {
   text-align: center;
   padding: 25px;
+  margin: 75px 50px 100px;
 }
 
 .house > img {
@@ -191,7 +196,15 @@ body {
   width: 80%;
   margin: auto;
 }
+#portfolio > h2 {
+  color: #9b3432;
+}
 
+#highlightHome {
+  color: #30574d;
+  font-weight: bold;
+  font-size: 1.2em; /* Increase font size */
+}
 /* Compare Section */
 #compare {
   padding: 25px;
@@ -207,7 +220,7 @@ table {
 }
 
 .company {
-  background-color: red;
+  background-color: #30574d;
   color: white;
   border: none;
   padding: 10px;
@@ -425,7 +438,8 @@ label {
   background: none;
 }
 
-#submit, #cancel {
+#submit,
+#cancel {
   width: 100%;
   padding: 10px;
   border-radius: 3px;

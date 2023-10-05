@@ -168,3 +168,5 @@ document.getElementById('next-arrow').addEventListener('click', () => {
     carousel.showImage(5);
     carousel.next();
 });
+
+
