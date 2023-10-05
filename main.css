@@ -1,505 +1,464 @@
+/* Global Styles */
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-      overflow: hidden;
-  }
-  
-  
-  
-  /* Nav Section */
-  
-  .header-image {
-    text-align: center;
-    background: url(images/nav_image.jpeg) no-repeat center;
-    background-size: cover;
-    height: 100vh;
-    position: relative; /* Make the header relative to allow absolute positioning */
-    z-index: 0; /* Adjust z-index to place the image behind the content */
-  }
-  
-  .subtitle {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    position: absolute; /* Position the subtitle absolutely */
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1; /* Place the subtitle above the image */
-  }
-  
-  #myNav.offset {
-    background-color: #9b3432; /* Add background color when offset */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow when offset */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transition */
-    position: fixed;
-    top: 0;
-    width: 100%;
-    animation: fadeIn 0.5s;
-  }
-  
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    animation: fadeIn 0.5s;
-  }
-  /* CSS for the fade-in animation */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  #myNav {
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-    list-style: none;
-    margin: 0; /* Remove default margin */
-    background-color: rgba(30, 17, 11, 255);
-  }
-  
-  /* Style the navigation links */
-  #myNav a {
-    flex-grow: 1; /* Distribute space equally */
-    text-align: center; /* Center-align the text */
-  }
-  
-  /* Style the "GET A FAST QUOTE" button */
-  .getQuote {
-    background-color: #9b3432;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    margin-left: 15px;
-  }
-  /* Scroll on the side */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  overflow: scroll !important;
+  padding-right: 0 !important; /* Override the default padding */
+}
+
+/* Nav Section */
+.header-image {
+  text-align: center;
+  background: url(images/nav_image.jpeg) no-repeat center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  z-index: 0;
+}
+
+.subtitle {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  color: #30574d;
+}
+
+#myNav.offset,
+.sticky {
+  background-color: #9b3432;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  animation: fadeIn 0.5s;
+  left: 0;
+  width: 100%; /* Set your preferred background color */
+  z-index: 999;
+}
+
+#myNav {
+  background-color: #1e110b; /* Solid color */
+  list-style: none;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+#myNav a {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.getQuote {
+  background-color: #9b3432;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-left: 15px;
+}
+
+/* Scroll Arrow */
+.scroll-arrow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #9b3432;
+  border-radius: 10%;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  z-index: 999;
+  display: block;
+  cursor: pointer;
+}
+
+.scroll-arrow:hover {
+  background-color: #30574d;
+  transform: scale(1.1);
+  color: #fff;
+}
+
+/* Responsive Styling for Small Screens */
+@media screen and (max-width: 768px) {
   .scroll-arrow {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      font-size: 16px; /* Reduced font size */
-      color: #fff;
-      background-color: #9b3432;
-      border-radius: 10%;
-      padding: 8px; /* Reduced padding */
-      text-decoration: none;
-      transition: background-color 0.3s, transform 0.3s;
-      z-index: 999;
-      display: block;
-      cursor: pointer; /* Add cursor style to indicate interactivity */
-    }
-    
-    .scroll-arrow:hover {
-      background-color: #30574d;
-      transform: scale(1.1);
-      color: #fff;
-    }
-  
-    
-  
-  /* Responsive styling for small screens */
-  @media screen and (max-width: 768px) {
-    .scroll-arrow {
-      font-size: 20px;
-      padding: 8px;
-      bottom: 15px;
-      left: 15px;
-    }
+    font-size: 20px;
+    padding: 8px;
   }
+}
 
-  #info-right:hover {
-    color: #9b3432;
-    cursor: pointer;
-  }
-  
-  #info {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    padding: 25px;
-    background-color: #fff;
-    color: #30574d;
-  }
-  
-  #info-right {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-evenly;
-    margin: 0.8em;
-    width: 65%;
-    text-align: center;
-  }
-  
-  #info-right hr {
-    background-color: #30574d;
-  }
-  
-  #info-image {
-    display: flex;
-    height: 200px;
-    align-self: flex-start;
-    margin-right: 20px;
-  }
-  
-  /* Hide the image when hovering over #info-right */
-  #info-right:hover #info-image {
-    display: none;
-  }
-  
+/* Info Section */
+#infoDisplay:hover {
+  color: #9b3432;
+  cursor: pointer;
+}
 
-  
-  /* Benefits Section */
-  
-  #benefits,
-  #compare,
-  #area {
-    background-color: rgb(243, 235, 235);
-  }
-  
-  #benefits {
-    padding: 25px;
-  }
-  
-  #benefits-group {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-  }
-  
-  #benefits-left {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-evenly;
-    margin: 0.8em;
-    width: 35%;
-    box-shadow: 5px 5px 5px darkgray;
-  }
-  
-  #benefits-right {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    margin: 0.8em;
-    width: 65%;
-  }
-  
-  #benefits-right > p {
-    display: none;
-  }
-  
-  .benefit {
-    border: 1px solid grey;
-    margin: 0px;
-    height: 37px;
-    padding: 15px 0px 0px 25px;
-    background-color: white;
-  }
-  
-  .benefit > span {
-    display: none;
-  }
-  
-  .benefit:hover > span {
-    display: inline;
-  }
-  
-  .benefit:hover {
-    background-color: red;
-    cursor: pointer;
-  }
-  
-  /* Portfolio Section */
-  
-  #portfolio {
-    text-align: center;
-  
-    padding: 25px;
-  }
-  
-  .house > img {
-    width: 19%;
-    height: 150px;
-    margin: 2px;
-  }
-  
-  #houses {
-    box-shadow: 0px 5px 5px darkgray;
-    border-radius: 3px;
-    width: 80%;
-    margin: auto;
-  }
-  
-  /* Compare Section */
-  
-  #compare {
-    padding: 25px;
-  }
-  
-  table {
-    margin: auto;
-    background-color: white;
-    border-collapse: collapse;
-    width: 80%;
-    border: 15px solid white;
-    box-shadow: 0px 5px 5px darkgray;
-  }
-  
-  .company {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 10px;
-  }
-  
-  .check {
-    background-color: rgb(243, 235, 235);
-    text-align: center;
-  }
-  
-  .circle {
-    width: 17px;
-    border: 1px solid black;
-    border-radius: 50%;
-    margin: auto;
-  }
-  
-  .merry {
-    color: red;
-    border: 1px solid red;
-    box-shadow: 5px 5px 5px darkgray;
-  }
-  
-  /* Steps Section */
-  
-  #easySteps {
-    padding: 25px;
-  }
-  
-  #steps {
-    width: 80%;
-    margin: auto;
-    border: 15px solid white;
-    box-shadow: 0px 5px 5px darkgray;
-    background-color: rgb(243, 235, 235);
-    display: flex;
-    flex-flow: row;
-  }
-  
-  #step {
-    width: 20%;
-  }
-  
-  .steps {
-    border: 1px solid lightgray;
-    text-align: center;
-    height: 60px;
-    padding-top: 8px;
-  }
-  
-  .steps:hover {
-    background-color: red;
-  }
-  
-  .steps > p {
-    display: inline-block;
-  }
-  
-  .step {
-    transform: rotate(270deg);
-    font-size: 10px;
-  }
-  
-  #process {
-    width: 60%;
-    padding: 0px 0px 10px 20px;
-  }
-  
-  #processSteps {
-    height: 100px;
-  }
-  
-  #processSteps > p {
-    display: none;
-  }
-  
-  #checklist {
-    width: 20%;
-    height: 210px;
-  }
-  
-  /* Area Section */
-  
-  #area {
-    height: 350px;
-    padding: 25px;
-  }
-  
-  #map {
-    text-align: center;
-    background: url(images/map.jpeg) no-repeat center;
-    background-size: contain;
-    height: 200px;
-    padding-top: 15px;
-    box-shadow: 0px 5px 5px darkgray;
-    background-color: white;
-  }
-  
-  /* Frequently Asked Questions Section */
-  
-  #faq {
-    margin: 50px 0px;
-  }
-  
-  .answer {
-    display: none;
-    width: 45%;
-    margin: auto;
-    text-align: justify;
-  }
-  
-  h5 {
-    position: relative;
-    border: 1px solid rgb(243, 235, 235);
-    box-shadow: 5px 5px 5px lightgray;
-    padding: 5px;
-    width: 50%;
-    margin: 15px auto;
-  }
-  
-  h5:hover {
-    cursor: pointer;
-    background-color: rgb(243, 235, 235);
-  }
-  
-  .plus {
-    background-color: indigo;
-    padding: 5px 10px;
-    margin-right: 10px;
-  }
-  
-  /* Footer Section */
-  
-  footer {
-    text-align: center;
-    background: url(images/footer_light.jpeg) no-repeat center;
-    background-size: cover;
-    height: 475px;
-    padding: 50px 50px 20px 50px;
-  }
-  
-  h1 {
-    color: white;
-  }
-  
-  #footerLinks {
-    display: flex;
-    flex-flow: row;
-    padding-top: 30px;
-  }
-  
-  #linkLeft {
-    width: 50%;
-    color: white;
-    text-align: left;
-    padding-top: 25px;
-  }
-  
-  ul {
-    list-style-type: none;
-  }
-  
-  #linkLeft > img {
-    margin-left: 70px;
-  }
-  
-  .social {
-    width: 30px;
-    height: 30px;
-    padding-top: 5px;
-  }
-  
-  #linkRight {
-    width: 50%;
-  }
-  
-  #countyMap {
-    width: 200px;
-    height: 160px;
-    padding-bottom: 10px;
-    border-radius: 3px;
-  }
-  
-  /* Get Quote */
-  
-  /* Get Quote */
-  #getQuote {
-    display: none;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  #quoteForm {
-    margin: 50px auto;
-    text-align: center;
-    width: 100%; /* Adjust the width to make the modal wider */
-    padding: 20px;
-    border: 2px solid rgb(243, 235, 235);
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px lightgray;
-    background-color: white;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 16px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .modal-header {
-    margin: 0; /* Remove line-height for better readability */
-    background: none; /* Remove the background box */
-  }
-  
-  #submit {
-    width: 100%;
-    padding: 10px;
-    background-color: #30574d;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  #cancel {
-    width: 100%;
-    padding: 10px;
-    background-color: #9b3432;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  .error-message {
-    color: #9b3432;
-    margin-top: 10px;
-  }
-  
+#info,
+#infoDisplay {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 25px;
+  background-color: #fff;
+  color: #30574d;
+  margin-top: 75px;
+}
+
+#infoDisplay {
+  flex-flow: column;
+  margin-top: 100px;
+  width: 65%;
+  text-align: center;
+}
+/* Benefits Section */
+#benefits {
+  background-color: #9b3432;
+  padding: 25px;
+  color: #fff;
+  text-align: center; /* Center the content */
+}
+
+.benefits-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the items horizontally */
+  justify-content: center; /* Center the items vertically */
+}
+
+.benefits-buttons {
+  display: flex;
+  flex-direction: row; /* Display buttons horizontally */
+  justify-content: space-evenly;
+  margin: 0.8em;
+}
+
+.benefit {
+  border: none;
+  margin: 0.8em; /* Add spacing between buttons */
+  padding: 15px;
+  background-color: #30574d;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex: 1; /* Distribute available space evenly among buttons */
+}
+
+.benefit:hover {
+  background-color: #9b3432;
+}
+
+.benefit-description {
+  display: none;
+  text-align: left; /* Align descriptions to the left */
+  padding: 20px; /* Add spacing around descriptions */
+}
+
+.highlight {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em; /* Increase font size */
+  text-shadow: 3px 3px 4px #30574d; /* Add text outline */
+}
+
+/* Center h2 */
+h2 {
+  text-align: center;
+}
+
+/* Portfolio Section */
+#portfolio {
+  text-align: center;
+  padding: 25px;
+  margin: 75px 50px 100px;
+}
+
+.house > img {
+  width: 19%;
+  height: 150px;
+  margin: 2px;
+}
+
+#houses {
+  box-shadow: 0px 5px 5px darkgray;
+  border-radius: 3px;
+  width: 80%;
+  margin: auto;
+}
+#portfolio > h2 {
+  color: #9b3432;
+}
+
+#highlightHome {
+  color: #30574d;
+  font-weight: bold;
+  font-size: 1.2em; /* Increase font size */
+}
+/* Compare Section */
+#compare {
+  padding: 25px;
+}
+
+table {
+  margin: auto;
+  background-color: white;
+  border-collapse: collapse;
+  width: 80%;
+  border: 15px solid white;
+  box-shadow: 0px 5px 5px darkgray;
+}
+
+.company {
+  background-color: #30574d;
+  color: white;
+  border: none;
+  padding: 10px;
+}
+
+.check {
+  background-color: rgb(243, 235, 235);
+  text-align: center;
+}
+
+.circle {
+  width: 17px;
+  border: 1px solid black;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.merry {
+  color: red;
+  border: 1px solid red;
+  box-shadow: 5px 5px 5px darkgray;
+}
+
+/* Steps Section */
+#easySteps {
+  padding: 25px;
+}
+
+#steps {
+  width: 80%;
+  margin: auto;
+  border: 15px solid white;
+  box-shadow: 0px 5px 5px darkgray;
+  background-color: rgb(243, 235, 235);
+  display: flex;
+  flex-flow: row;
+}
+
+#step {
+  width: 20%;
+}
+
+.steps {
+  border: 1px solid lightgray;
+  text-align: center;
+  height: 60px;
+  padding-top: 8px;
+}
+
+.steps:hover {
+  background-color: red;
+}
+
+.steps > p {
+  display: inline-block;
+}
+
+.step {
+  transform: rotate(270deg);
+  font-size: 10px;
+}
+
+#process {
+  width: 60%;
+  padding: 0px 0px 10px 20px;
+}
+
+#processSteps {
+  height: 100px;
+}
+
+#processSteps > p {
+  display: none;
+}
+
+#checklist {
+  width: 20%;
+  height: 210px;
+}
+
+/* Area Section */
+#area {
+  height: 350px;
+  padding: 25px;
+}
+
+#map {
+  text-align: center;
+  background: url(images/map.jpeg) no-repeat center;
+  background-size: contain;
+  height: 200px;
+  padding-top: 15px;
+  box-shadow: 0px 5px 5px darkgray;
+  background-color: white;
+}
+
+/* Frequently Asked Questions Section */
+#faq {
+  margin: 50px 0px;
+}
+
+.answer {
+  display: none;
+  width: 45%;
+  margin: auto;
+  text-align: justify;
+}
+
+h5 {
+  position: relative;
+  border: 1px solid rgb(243, 235, 235);
+  box-shadow: 5px 5px 5px lightgray;
+  padding: 5px;
+  width: 50%;
+  margin: 15px auto;
+}
+
+h5:hover {
+  cursor: pointer;
+  background-color: rgb(243, 235, 235);
+}
+
+.plus {
+  background-color: indigo;
+  padding: 5px 10px;
+  margin-right: 10px;
+}
+
+/* Footer Section */
+footer {
+  text-align: center;
+  background: url(images/footer_light.jpeg) no-repeat center;
+  background-size: cover;
+  height: 475px;
+  padding: 50px 50px 20px 50px;
+}
+
+h1 {
+  color: white;
+}
+
+#footerLinks {
+  display: flex;
+  flex-flow: row;
+  padding-top: 30px;
+}
+
+#linkLeft {
+  width: 50%;
+  color: white;
+  text-align: left;
+  padding-top: 25px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#linkLeft > img {
+  margin-left: 70px;
+}
+
+.social {
+  width: 30px;
+  height: 30px;
+  padding-top: 5px;
+}
+
+#linkRight {
+  width: 50%;
+}
+
+#countyMap {
+  width: 200px;
+  height: 160px;
+  padding-bottom: 10px;
+  border-radius: 3px;
+}
+
+/* Get Quote Section */
+#getQuote {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#quoteForm {
+  margin: 50px auto;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  border: 2px solid rgb(243, 235, 235);
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px lightgray;
+  background-color: white;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal-header {
+  margin: 0;
+  background: none;
+}
+
+#submit,
+#cancel {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#submit {
+  background-color: #30574d;
+  color: white;
+  border: none;
+}
+
+#cancel {
+  background-color: #9b3432;
+  color: white;
+  border: none;
+}
+
+.error-message {
+  color: #9b3432;
+  margin-top: 10px;
+}
