@@ -200,7 +200,8 @@ h2 {
   color: #9b3432;
 }
 
-#highlightHome {
+#highlightHome,
+#compareSection {
   color: #30574d;
   font-weight: bold;
   font-size: 1.2em; /* Increase font size */
@@ -208,6 +209,7 @@ h2 {
 /* Compare Section */
 #compare {
   padding: 25px;
+  margin-bottom: 60px;
 }
 
 table {
@@ -215,34 +217,58 @@ table {
   background-color: white;
   border-collapse: collapse;
   width: 80%;
-  border: 15px solid white;
   box-shadow: 0px 5px 5px darkgray;
 }
 
-.company {
+
+#comparison-table tbody tr:last-child:hover {
+  border: 10px solid #9b3432; /* Change to your desired hover border color */
+}
+td.company img:hover,
+td.greenChecks:hover  {
+  transform: scale(2.0); /* Adjust the scale factor as needed to control the magnification */
+  transition: transform 0.2s ease; /* Add a smooth transition effect */
+}
+
+
+table.comparison {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid black;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+table.comparison th {
+  text-align: center;
   background-color: #30574d;
   color: white;
-  border: none;
+  border: 1px solid black;
   padding: 10px;
 }
 
-.check {
-  background-color: rgb(243, 235, 235);
+table.comparison td {
+  border: 1px solid black;
+  padding: 10px;
   text-align: center;
 }
 
-.circle {
-  width: 17px;
-  border: 1px solid black;
-  border-radius: 50%;
-  margin: auto;
+tr.check:nth-child(even) {
+  background-color: #f3ebeb;
 }
 
-.merry {
-  color: red;
-  border: 1px solid red;
-  box-shadow: 5px 5px 5px darkgray;
+tr.check:nth-child(odd) {
+  background-color: #e0d8d8;
 }
+
+.redX {
+  color: #9b3432;
+}
+
+.greenChecks {
+  color: #30574d;
+}
+
 
 /* Steps Section */
 #easySteps {
