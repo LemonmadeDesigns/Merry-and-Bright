@@ -67,31 +67,57 @@ benefitsButtons.forEach((button) => {
   
 
   
-  // Steps Section
-  
-  const steps = document.getElementsByClassName("steps");
-  const stepOne = document.getElementById("stepOne");
-  const stepTwo = document.getElementById("stepTwo");
-  const stepThree = document.getElementById("stepThree");
-  
-  for (var i = 0; i < steps.length; i++) {
-    steps[i].addEventListener("mouseover", (e) => {
-      if (e.target.children[1].textContent == 1) {
-        stepOne.style.display = "block";
-      }
-      if (e.target.children[1].textContent == 2) {
-        stepTwo.style.display = "block";
-      }
-      if (e.target.children[1].textContent == 3) {
-        stepThree.style.display = "block";
-      }
+// Steps Section
+const stepTexts = document.querySelectorAll(".step-text");
+const stepDescriptions = document.querySelectorAll(".step-description");
+const stepImages = document.querySelectorAll(".step-image");
+const stepIcons = document.querySelectorAll('.step-icons')
+
+stepTexts.forEach((stepText, index) => {
+    stepText.addEventListener("click", () => {
+        // Toggle the active class to show/hide description, image, and icons
+        stepTexts.forEach((s) => s.classList.remove("active"));
+        stepDescriptions.forEach((description) => {
+            description.style.display = "none";
+        });
+        stepImages.forEach((image) => {
+            image.style.display = "none";
+        });
+        stepIcons.forEach((icon) => {
+            icon.style.display = "none";
+        });
+
+        const targetId = stepText.getAttribute("data-target");
+        const targetDescription = document.getElementById(targetId);
+        const targetImage = stepImages[index];
+        const targetIcons = stepIcons[index];
+
+        if (targetDescription.style.display === "block") {
+            targetDescription.style.display = "none";
+            targetImage.style.display = "none";
+            if (index === 0) {
+                targetIcons.style.display = "none"; // Hide icons only for the first card
+            }
+        } else {
+            stepText.classList.add("active");
+            targetDescription.style.display = "block";
+            targetImage.style.display = "block";
+            if (index === 0) {
+                targetIcons.style.display = "block"; // Show icons only for the first card
+            }
+        }
     });
-    steps[i].addEventListener("mouseleave", (e) => {
-      stepOne.style.display = "none";
-      stepTwo.style.display = "none";
-      stepThree.style.display = "none";
-    });
-  }
+});
+
+
+
+
+
+
+
+
+  
+  
   
   // Frequently Asked Questions Section
   

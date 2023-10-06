@@ -115,6 +115,9 @@ body {
   color: #30574d;
   margin-top: 75px;
 }
+#infoDisplay div {
+  clear: both;
+}
 
 #infoDisplay {
   flex-flow: column;
@@ -144,7 +147,8 @@ body {
   margin: 0.8em;
 }
 
-.benefit {
+.benefit,
+.step-text {
   border: none;
   margin: 0.8em; /* Add spacing between buttons */
   padding: 15px;
@@ -270,11 +274,13 @@ tr.check:nth-child(odd) {
 }
 
 
-/* Steps Section */
-#easySteps {
-  padding: 25px;
+/* Base Styles */
+#easySteps h2 {
+  color: #fff;
 }
 
+
+/* Step Box Styles */
 #steps {
   width: 80%;
   margin: auto;
@@ -283,31 +289,87 @@ tr.check:nth-child(odd) {
   background-color: rgb(243, 235, 235);
   display: flex;
   flex-flow: row;
+  justify-content: center;
+  align-items: center;
 }
 
-#step {
-  width: 20%;
+/* Steps Section */
+#easySteps {
+  padding: 25px;
+  background-color: #9b3432;
 }
 
-.steps {
-  border: 1px solid lightgray;
+/* Step Card Styles */
+.step-card {
   text-align: center;
-  height: 60px;
-  padding-top: 8px;
+  padding: 20px;
+  border: 1px solid lightgray;
+  background-color: rgb(243, 235, 235);
+  box-shadow: 0px 5px 5px darkgray;
+  transition: background-color 0.3s;
+  color: #9b3432;
+}
+/* Add styles for the image */
+.step-image {
+  width: 100%; /* Make the image fill the width of the card */
+  height: 250px; /* Maintain aspect ratio */
+  padding: 10px; /* Add padding */
+  margin-bottom: 10px; /* Add margin bottom */
 }
 
-.steps:hover {
-  background-color: red;
+.step-card:hover {
+  background-color: #30574d;
 }
 
-.steps > p {
-  display: inline-block;
+.card-text {
+  color: #30574d;
 }
 
-.step {
-  transform: rotate(270deg);
-  font-size: 10px;
+/* Step Text Styles */
+.step-text {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  background-color: #9b3432;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+.step-text.active {
+  background-color: #30574d;
+}
+
+.step-text:hover {
+  color: #30574d;
+}
+/* Step Description Styles */
+.step-description {
+  display: none;
+  color: #30574d;
+}
+
+/* Step Icons Styles */
+.step-icons {
+  margin-top: 10px;
+}
+
+.icon-link {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: #9b3432;
+}
+
+.icon-link:hover {
+  color: #30574d;
+}
+
+/* Initially Hide Elements with Transition */
+.step-icons, .step-image, .step-description {
+  display: none;
+  transition: display 0.5s;
+}
+
 
 #process {
   width: 60%;
