@@ -1,37 +1,46 @@
 // Nav bar
 window.addEventListener("scroll", function () {
-    let header = document.querySelector(".header-image");
-    let nav = document.querySelector("#myNav");
-    let subtitle = document.querySelector(".subtitle");
-    if (window.pageYOffset >= header.clientHeight / 2) {
-      nav.classList.add("offset");
-      subtitle.style.opacity = 1;
-    } else {
-      nav.classList.remove("offset");
-      subtitle.style.opacity = 0;
-    }
-  });
-
-    // Function to change the active class based on scroll position
-   // Function to change the active class based on scroll position
+  let header = document.querySelector(".header-image");
+  let nav = document.querySelector("#myNav");
+  let subtitle = document.querySelector(".subtitle");
+  if (header && nav && subtitle) { // Check if elements exist
+      if (window.pageYOffset >= header.clientHeight / 2) {
+          nav.classList.add("offset");
+          subtitle.style.opacity = 1;
+      } else {
+          nav.classList.remove("offset");
+          subtitle.style.opacity = 0;
+      }
+  }
+});
+// Function to change the active class based on scroll position
 function setActiveNav() {
   const sections = document.querySelectorAll("section"); // Get all sections in your page
   const navLinks = document.querySelectorAll(".navbar-nav a"); // Get all the navigation links
 
   // Loop through each section
   sections.forEach((section, index) => {
-      const rect = section.getBoundingClientRect();
+    const rect = section.getBoundingClientRect();
 
-      // Check if the section is in the viewport
-      if (rect.top <= 0 && rect.bottom >= 0) {
-          // Add the "active" class to the corresponding navigation link
-          navLinks.forEach((link) => {
-              link.classList.remove("active");
-          });
-          navLinks[index].classList.add("active");
+    // Check if the section is in the viewport
+    if (rect && rect.top <= 0 && rect.bottom >= 0) {
+      // Add the "active" class to the corresponding navigation link
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+      });
+      if (navLinks[index]) {
+        navLinks[index].classList.add("active");
       }
+    }
   });
 }
+
+// Add a scroll event listener to call the setActiveNav function when scrolling
+window.addEventListener("scroll", setActiveNav);
+
+// Call setActiveNav initially to set the active class on page load
+setActiveNav();
+
 
 // Add a scroll event listener to call the setActiveNav function when scrolling
 window.addEventListener("scroll", setActiveNav);
@@ -144,31 +153,87 @@ stepTexts.forEach((stepText, index) => {
     });
 });
 
+const faqContainer = document.getElementById("faq-container");
 
+faqContainer.addEventListener("click", (e) => {
+    const plusButton = e.target.closest(".plus");
+    const card = e.target.closest(".card");
+    const answer = card.querySelector(".answer");
 
+    if (plusButton) {
+        // Check if the card is currently open
+        const isOpen = card.classList.contains("open");
 
+        // Close all answers before opening the clicked one
+        closeAllAnswers();
 
+        // Toggle the answer when the plus/minus button is clicked
+        if (!isOpen) {
+            answer.style.display = "block";
+            plusButton.textContent = "-";
+            card.classList.add("open");
+        } else {
+            answer.style.display = "none";
+            plusButton.textContent = "+";
+            card.classList.remove("open");
+        }
+    }
+});
 
-
-  
-  
-  // Frequently Asked Questions Section
-  
-  const questions = document.getElementsByClassName("questions");
-  
-  for (var i = 0; i < questions.length; i++) {
-    questions[i].addEventListener("click", (e) => {
-      if (e.target.firstChild.textContent == "+") {
-        e.target.nextElementSibling.style.display = "block";
-        e.target.firstChild.style.backgroundColor = "red";
-        e.target.firstChild.innerHTML = "-";
-      } else {
-        e.target.nextElementSibling.style.display = "none";
-        e.target.firstChild.style.backgroundColor = "indigo";
-        e.target.firstChild.innerHTML = "+";
-      }
+function closeAllAnswers() {
+    const allCards = faqContainer.querySelectorAll(".card.open");
+    allCards.forEach((card) => {
+        const answer = card.querySelector(".answer");
+        const plusButton = card.querySelector(".plus");
+        answer.style.display = "none";
+        plusButton.textContent = "+";
+        card.classList.remove("open");
     });
-  }
+}
+
+// Define an array of FAQ items with questions and answers
+const faqItems = [
+  {
+      question: "After The Holidays, Do You Remove The Lights?",
+      answer: "Yes! When you choose Merry and Bright to light up your home for the holidays in southeast Michigan, you'll receive everything! The lights are removed when the holidays are over, just as they were put up. Our staff is trained to remove lights without causing damage to your house, just like with installation!",
+  },
+  {
+      question: "If A Light Bulb Goes Out, Is This Under Warranty?",
+      answer: "Yes! When you choose Merry and Bright to light up your home for the holidays in southeast Michigan, you'll receive everything! The lights are removed when the holidays are over, just as they were put up. Our staff is trained to remove lights without causing damage to your house, just like with installation!",
+  },
+  {
+      question: "What Types Of Decorations Do You Offer?",
+      answer: "Yes! When you choose Merry and Bright to light up your home for the holidays in southeast Michigan, you'll receive everything! The lights are removed when the holidays are over, just as they were put up. Our staff is trained to remove lights without causing damage to your house, just like with installation!",
+  },
+  {
+      question: "Will We Need To Hire An Electrician?",
+      answer: "Yes! When you choose Merry and Bright to light up your home for the holidays in southeast Michigan, you'll receive everything! The lights are removed when the holidays are over, just as they were put up. Our staff is trained to remove lights without causing damage to your house, just like with installation!",
+  },
+];
+
+// Loop through the FAQ items and create cards dynamically
+faqItems.forEach((item, index) => {
+    // Create unique IDs for questions and answers
+    const questionId = `question-${index}`;
+    const answerId = `answer-${index}`;
+
+    // Create a new card element
+    const card = document.createElement("div");
+    card.className = "col-md-6 mb-4 card";
+    card.innerHTML = `
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 id="${questionId}" class="card-title questions"><span class="plus">+</span>${item.question}</h5>
+                <p id="${answerId}" class="card-text answer">${item.answer}</p>
+            </div>
+        </div>
+    `;
+
+    // Append the card to the FAQ container
+    faqContainer.appendChild(card);
+});
+
+
   
   // Get Quote
   
