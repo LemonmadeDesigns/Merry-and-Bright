@@ -341,7 +341,7 @@ tr.check:nth-child(odd) {
 }
 
 .step-text:hover {
-  color: #30574d;
+  color: #fff;
 }
 /* Step Description Styles */
 .step-description {
