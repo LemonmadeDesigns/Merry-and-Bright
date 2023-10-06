@@ -83,13 +83,6 @@ benefitsButtons.forEach((button) => {
   });
 });
 
-// Add a click event listener to the document body to collapse descriptions when clicking elsewhere
-document.body.addEventListener("click", () => {
-  benefitDescriptions.forEach((description) => {
-    description.style.display = "none";
-  });
-});
-
 // Steps Section
 const stepTexts = document.querySelectorAll(".step-text");
 const stepDescriptions = document.querySelectorAll(".step-description");
@@ -97,60 +90,53 @@ const stepImages = document.querySelectorAll(".step-image");
 const stepIcons = document.querySelectorAll(".step-icons");
 
 let isFirstCardSelected = false;
+let selectedIndex = -1; // Initialize with an invalid index
 
-function collapseAll(indexToKeep = -1) {
-    stepTexts.forEach((s, index) => {
-        if (index !== indexToKeep) {
-            s.classList.remove("active");
-        }
-    });
+function toggleStep(index) {
+  stepTexts.forEach((stepText, i) => {
+    const targetDescription = stepDescriptions[i];
+    const targetImage = stepImages[i];
+    const targetIcons = stepIcons[i];
 
-    stepDescriptions.forEach((description, index) => {
-        if (index !== indexToKeep) {
-            description.style.display = "none";
-        }
-    });
-
-    stepImages.forEach((image, index) => {
-        if (index !== indexToKeep) {
-            image.style.display = "none";
-        }
-    });
-
-    stepIcons.forEach((icon, index) => {
-        if (index === indexToKeep || indexToKeep === -1) {
-            icon.style.display = isFirstCardSelected ? "block" : "none";
-        } else {
-            icon.style.display = "none";
-        }
-    });
+    if (i === index) {
+      stepText.classList.toggle("active");
+      targetDescription.style.display = targetDescription.style.display === "block" ? "none" : "block";
+      targetImage.style.display = targetImage.style.display === "block" ? "none" : "block";
+      
+      if (targetIcons) {
+        targetIcons.style.display = isFirstCardSelected && selectedIndex === index ? "block" : "none";
+      }
+      
+      selectedIndex = index; // Update the selected index
+    } else {
+      stepText.classList.remove("active");
+      targetDescription.style.display = "none";
+      targetImage.style.display = "none";
+      if (targetIcons) {
+        targetIcons.style.display = "none";
+      }
+    }
+  });
 }
 
 stepTexts.forEach((stepText, index) => {
-    stepText.addEventListener("click", (event) => {
-        event.stopPropagation();
-        isFirstCardSelected = true; // Mark the first card as selected
-        collapseAll(index);
-        const targetId = stepText.getAttribute("data-target");
-        const targetDescription = document.getElementById(targetId);
-        const targetImage = stepImages[index];
-        const targetIcons = stepIcons[index];
+  stepText.addEventListener("click", (event) => {
+    event.stopPropagation();
+    isFirstCardSelected = true; // Mark the first card as selected
+    if (selectedIndex === index) {
+      selectedIndex = -1; // Clicking the same step again collapses it
+    }
+    toggleStep(index);
+  });
+});
 
-        if (targetDescription) {
-            if (targetDescription.style.display === "block") {
-                targetDescription.style.display = "none";
-                targetImage.style.display = "none";
-                targetIcons.style.display = "none";
-            } else {
-                stepText.classList.add("active");
-                targetDescription.style.display = "block";
-                targetImage.style.display = "block";
-                if (isFirstCardSelected) {
-                    targetIcons.style.display = "block";
-                }
-            }
-        }
-    });
+// Add an event listener to the document body to collapse all when clicking elsewhere
+document.body.addEventListener("click", () => {
+  if (isFirstCardSelected) {
+    isFirstCardSelected = false;
+    selectedIndex = -1; // Reset the selected index when clicking elsewhere
+    toggleStep(-1); // Collapse all steps when clicking elsewhere
+  }
 });
 
 const faqContainer = document.getElementById("faq-container");
@@ -190,7 +176,6 @@ function closeAllAnswers() {
         card.classList.remove("open");
     });
 }
-
 // Define an array of FAQ items with questions and answers
 const faqItems = [
   {
@@ -219,12 +204,12 @@ faqItems.forEach((item, index) => {
 
     // Create a new card element
     const card = document.createElement("div");
-    card.className = "col-md-6 mb-4 card";
+    card.className = "col-md-6 mb-4";
     card.innerHTML = `
         <div class="card mb-3">
             <div class="card-body">
                 <h5 id="${questionId}" class="card-title questions"><span class="plus">+</span>${item.question}</h5>
-                <p id="${answerId}" class="card-text answer">${item.answer}</p>
+                <p id="${answerId}" class="card-text answer" style="display: none;">${item.answer}</p>
             </div>
         </div>
     `;
@@ -233,7 +218,12 @@ faqItems.forEach((item, index) => {
     faqContainer.appendChild(card);
 });
 
-
+// Add an event listener to the document body to close FAQ items when clicking outside
+document.body.addEventListener("click", (e) => {
+    if (!faqContainer.contains(e.target)) {
+        closeAllAnswers();
+    }
+});
   
   // Get Quote
   
