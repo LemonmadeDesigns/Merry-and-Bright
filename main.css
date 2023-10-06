@@ -391,19 +391,37 @@ tr.check:nth-child(odd) {
 
 /* Area Section */
 #area {
-  height: 350px;
-  padding: 25px;
+  padding: 50px 0;
+  background-color: #f3ebeb;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
-#map {
-  text-align: center;
-  background: url(images/map.jpeg) no-repeat center;
-  background-size: contain;
-  height: 200px;
-  padding-top: 15px;
-  box-shadow: 0px 5px 5px darkgray;
-  background-color: white;
+.area-description h2 {
+  font-size: 36px;
+  color: #30574d; /* Updated color to #30574d */
 }
+
+.area-description p {
+  font-size: 24px;
+  color: #30574d; /* Updated color to #30574d */
+  margin-bottom: 20px;
+}
+
+.area-image {
+  text-align: right; /* Move the image to the right */
+}
+
+.area-image img {
+  max-width: 90%; /* Adjust the width as needed */
+  height: auto; /* Maintain the aspect ratio */
+  box-shadow: 0px 5px 5px darkgray;
+  border: 5px solid #9b3432; /* Added border with #9b3432 color */
+  border-radius: 10px; /* Added border-radius for a rounded look */
+}
+
+
+
 
 /* Frequently Asked Questions Section */
 #faq {

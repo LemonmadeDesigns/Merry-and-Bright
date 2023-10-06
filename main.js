@@ -53,57 +53,92 @@ const benefitDescriptions = document.querySelectorAll(".benefit-description");
 
 benefitsButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
+    const targetId = e.target.getAttribute("data-target");
+    const targetDescription = document.getElementById(targetId);
+
+    // Check if the description is currently visible
+    const isDescriptionVisible = targetDescription.style.display === "block";
+
     // Hide all descriptions
     benefitDescriptions.forEach((description) => {
       description.style.display = "none";
     });
 
-    const targetId = e.target.getAttribute("data-target");
-    const targetDescription = document.getElementById(targetId);
-    targetDescription.style.display = "block";
+    // Toggle the display of the clicked description
+    if (!isDescriptionVisible) {
+      targetDescription.style.display = "block";
+    }
+    
+    // Prevent the click event from propagating to the document body
+    e.stopPropagation();
   });
 });
 
-  
+// Add a click event listener to the document body to collapse descriptions when clicking elsewhere
+document.body.addEventListener("click", () => {
+  benefitDescriptions.forEach((description) => {
+    description.style.display = "none";
+  });
+});
 
-  
 // Steps Section
 const stepTexts = document.querySelectorAll(".step-text");
 const stepDescriptions = document.querySelectorAll(".step-description");
 const stepImages = document.querySelectorAll(".step-image");
-const stepIcons = document.querySelectorAll('.step-icons')
+const stepIcons = document.querySelectorAll(".step-icons");
+
+let isFirstCardSelected = false;
+
+function collapseAll(indexToKeep = -1) {
+    stepTexts.forEach((s, index) => {
+        if (index !== indexToKeep) {
+            s.classList.remove("active");
+        }
+    });
+
+    stepDescriptions.forEach((description, index) => {
+        if (index !== indexToKeep) {
+            description.style.display = "none";
+        }
+    });
+
+    stepImages.forEach((image, index) => {
+        if (index !== indexToKeep) {
+            image.style.display = "none";
+        }
+    });
+
+    stepIcons.forEach((icon, index) => {
+        if (index === indexToKeep || indexToKeep === -1) {
+            icon.style.display = isFirstCardSelected ? "block" : "none";
+        } else {
+            icon.style.display = "none";
+        }
+    });
+}
 
 stepTexts.forEach((stepText, index) => {
-    stepText.addEventListener("click", () => {
-        // Toggle the active class to show/hide description, image, and icons
-        stepTexts.forEach((s) => s.classList.remove("active"));
-        stepDescriptions.forEach((description) => {
-            description.style.display = "none";
-        });
-        stepImages.forEach((image) => {
-            image.style.display = "none";
-        });
-        stepIcons.forEach((icon) => {
-            icon.style.display = "none";
-        });
-
+    stepText.addEventListener("click", (event) => {
+        event.stopPropagation();
+        isFirstCardSelected = true; // Mark the first card as selected
+        collapseAll(index);
         const targetId = stepText.getAttribute("data-target");
         const targetDescription = document.getElementById(targetId);
         const targetImage = stepImages[index];
         const targetIcons = stepIcons[index];
 
-        if (targetDescription.style.display === "block") {
-            targetDescription.style.display = "none";
-            targetImage.style.display = "none";
-            if (index === 0) {
-                targetIcons.style.display = "none"; // Hide icons only for the first card
-            }
-        } else {
-            stepText.classList.add("active");
-            targetDescription.style.display = "block";
-            targetImage.style.display = "block";
-            if (index === 0) {
-                targetIcons.style.display = "block"; // Show icons only for the first card
+        if (targetDescription) {
+            if (targetDescription.style.display === "block") {
+                targetDescription.style.display = "none";
+                targetImage.style.display = "none";
+                targetIcons.style.display = "none";
+            } else {
+                stepText.classList.add("active");
+                targetDescription.style.display = "block";
+                targetImage.style.display = "block";
+                if (isFirstCardSelected) {
+                    targetIcons.style.display = "block";
+                }
             }
         }
     });
@@ -115,8 +150,6 @@ stepTexts.forEach((stepText, index) => {
 
 
 
-
-  
   
   
   // Frequently Asked Questions Section
