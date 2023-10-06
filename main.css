@@ -297,6 +297,7 @@ tr.check:nth-child(odd) {
 #easySteps {
   padding: 25px;
   background-color: #9b3432;
+  margin-top: 45px;
 }
 
 /* Step Card Styles */
@@ -420,39 +421,46 @@ tr.check:nth-child(odd) {
   border-radius: 10px; /* Added border-radius for a rounded look */
 }
 
-
-
-
 /* Frequently Asked Questions Section */
 #faq {
-  margin: 50px 0px;
+  margin: 50px 0;
+  background-color: #f3ebeb;
+  padding: 20px;
+}
+
+.card {
+  border: 3px solid #9b3432;
+  box-shadow: 0px 5px 5px darkgray;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.questions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Add space between plus symbol and question */
+  cursor: pointer;
+}
+
+.plus {
+  background-color: #30574d;
+  color: white;
+  padding: 5px 10px;
+  margin-left: 10px; /* Adjust margin */
+  border-radius: 50%;
+  font-size: 20px; /* Increase font size */
 }
 
 .answer {
   display: none;
-  width: 45%;
-  margin: auto;
   text-align: justify;
 }
 
-h5 {
-  position: relative;
-  border: 1px solid rgb(243, 235, 235);
-  box-shadow: 5px 5px 5px lightgray;
-  padding: 5px;
-  width: 50%;
-  margin: 15px auto;
-}
-
-h5:hover {
-  cursor: pointer;
-  background-color: rgb(243, 235, 235);
-}
-
-.plus {
-  background-color: indigo;
-  padding: 5px 10px;
-  margin-right: 10px;
+/* Add hover effect for the question */
+.questions:hover {
+  background-color: #e0d8d8;
 }
 
 /* Footer Section */
