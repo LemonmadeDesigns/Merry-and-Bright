@@ -322,7 +322,8 @@ tr.check:nth-child(odd) {
   background-color: #30574d;
 }
 
-.card-text {
+.card-text,
+#faq h2 {
   color: #30574d;
 }
 
