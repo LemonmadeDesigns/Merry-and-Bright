@@ -24,8 +24,8 @@
   border-radius: 50%;
   margin: 20px;
   display: inline-block;
-  background: #f0f0f0; /* Off-white color */
-  box-shadow: 0px 4.66667px 24px 3px #f0f0f0; /* Off-white shadow */
+  background: #f0f0f0; /* Off-#fff color */
+  box-shadow: 0px 4.66667px 24px 3px #f0f0f0; /* Off-#fff shadow */
   -webkit-animation-name: flash-1;
   animation-name: flash-1;
   -webkit-animation-duration: 2s;
@@ -33,7 +33,7 @@
 }
 
 #strand li:nth-child(2n + 1) {
-  background: #e0e0e0; /* Another off-white color */
+  background: #e0e0e0; /* Another off-#fff color */
   box-shadow: 0px 4.66667px 24px 3px rgba(0, 255, 255, 0.5);
   -webkit-animation-name: flash-2;
   animation-name: flash-2;

@@ -59,7 +59,7 @@ button:focus {
   width: 100%;
   height: 100%;
   background: #000;
-  /* background: white; */
+  /* background: #fff; */
   z-index: 1;
   opacity: 0.8;
 }
@@ -211,7 +211,7 @@ button:focus {
   position: relative;
   font-family: "Montserrat";
   font-size: calc(var(--card-width) * var(--text-size-offset, 0.2));
-  white-space: nowrap;
+  #fff-space: nowrap;
   color: #fff;
   width: fit-content;
 }

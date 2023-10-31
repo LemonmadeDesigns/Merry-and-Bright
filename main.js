@@ -234,4 +234,38 @@ document.body.addEventListener("click", (e) => {
     let myModal = new bootstrap.Modal(document.getElementById("quoteModal"));
     myModal.show();
   });
-  
+
+
+// Footer function
+
+  // Function to handle the click on phone icon
+  function openPhoneLink() {
+    window.location.href = "tel:(810)836-8329";
+  }
+
+  // Function to handle the click on map marker icon
+  function openLocationLink() {
+    window.location.href = "https://www.google.com/maps?q=Lake+Orion,MI+48362";
+  }
+
+  // Function to handle the click on email icon
+  function openEmailLink() {
+    window.location.href = "mailto:info@merryandbright.com";
+  }
+
+  // Add event listeners to the icons
+  document.querySelector('.fa-phone').addEventListener('click', openPhoneLink);
+  document.querySelector('.fa-map-marker').addEventListener('click', openLocationLink);
+  document.querySelector('.fa-envelope').addEventListener('click', openEmailLink);
+ // Get references to the Font Awesome icons
+ const facebookIcon = document.getElementById('facebook-icon');
+ const instagramIcon = document.getElementById('instagram-icon');
+
+ // Add click event listeners to the icons
+ facebookIcon.addEventListener('click', () => {
+   window.location.href = 'https://www.facebook.com/your-facebook-page'; // Replace with your Facebook URL
+ });
+
+ instagramIcon.addEventListener('click', () => {
+   window.location.href = 'https://www.instagram.com/your-instagram-page'; // Replace with your Instagram URL
+ });
