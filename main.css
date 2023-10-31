@@ -465,54 +465,48 @@ tr.check:nth-child(odd) {
 }
 
 /* Footer Section */
+/* Footer Section */
 footer {
   text-align: center;
-  background: url(images/footer_light.jpeg) no-repeat center;
-  background-size: cover;
-  height: 475px;
+  background-color: #30574d; /* Set your desired background color */
   padding: 50px 50px 20px 50px;
-}
-
-h1 {
-  color: white;
+  color: #fff;
 }
 
 #footerLinks {
   display: flex;
-  flex-flow: row;
+  flex-direction: row; /* Use flex-direction instead of flex-flow */
+  justify-content: center; /* Horizontally center the content */
   padding-top: 30px;
 }
 
 #linkLeft {
   width: 50%;
-  color: white;
+  color: #fff;
   text-align: left;
   padding-top: 25px;
 }
 
-ul {
+#footerIcons {
   list-style-type: none;
-}
-
-#linkLeft > img {
-  margin-left: 70px;
+  display: flex; /* Make the list items flex containers */
+  align-items: center; /* Vertically center the content */
+  justify-content: space-between;
 }
 
 .social {
   width: 30px;
   height: 30px;
-  padding-top: 5px;
+  padding: 0 10px; /* Add some horizontal spacing between icons */
+  transition: color 0.3s; /* Smooth color transition effect */
 }
 
-#linkRight {
-  width: 50%;
+.social:hover {
+  color: #9b3432;/* Your desired hover color */; /* Change the color on hover */
 }
 
-#countyMap {
-  width: 200px;
-  height: 160px;
-  padding-bottom: 10px;
-  border-radius: 3px;
+#email {
+  color: #fff;
 }
 
 /* Get Quote Section */

@@ -28,7 +28,7 @@
     border: 10px solid;
     border-image-slice: 1;
     border-width: 5px;
-    border-image-source: linear-gradient(to left, #30574d, white, #9b3432);
+    border-image-source: linear-gradient(to left, #30574d, #fff, #9b3432);
 }
 
 #carousel-image-0 {
